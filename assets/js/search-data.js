@@ -23,7 +23,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cinema/";
           },
-        },{id: "post-阅读-paged-attention-论文",
+        },{id: "post-阅读-distserve-论文",
+        
+          title: "阅读 DistServe 论文",
+        
+        description: "distserve",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/distserve/";
+          
+        },
+      },{id: "post-阅读-orca-论文",
+        
+          title: "阅读 Orca 论文",
+        
+        description: "AI Infra",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/orca/";
+          
+        },
+      },{id: "post-阅读-paged-attention-论文",
         
           title: "阅读 Paged Attention 论文",
         
