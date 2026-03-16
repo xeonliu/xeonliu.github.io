@@ -23,7 +23,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cinema/";
           },
-        },{id: "post-阅读-distserve-论文",
+        },{id: "post-async-flow",
+        
+          title: "Async Flow",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Async-Flow/";
+          
+        },
+      },{id: "post-areal",
+        
+          title: "Areal",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/AReal/";
+          
+        },
+      },{id: "post-阅读-distserve-论文",
         
           title: "阅读 DistServe 论文",
         
