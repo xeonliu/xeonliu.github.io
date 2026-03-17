@@ -116,6 +116,31 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/algiers/";
+            },},{id: "books-neon-genesis-evangelion",
+          title: 'Neon Genesis Evangelion',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/evangelion/";
+            },},{id: "books-dislocation",
+          title: 'Dislocation',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/murder/";
+            },},{id: "books-paranoid-agent",
+          title: 'Paranoid Agent',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/paranoid/";
+            },},{id: "books-stage-sisters",
+          title: 'Stage Sisters',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/stage/";
+            },},{id: "books-wings-of-desire",
+          title: 'Wings of Desire',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/wings/";
             },},{id: "books-a-one-and-a-two",
           title: 'A One and A Two',
           description: "",
