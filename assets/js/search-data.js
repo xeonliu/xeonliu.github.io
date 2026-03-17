@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cinema/";
           },
-        },{id: "post-async-flow",
+        },{id: "post-lamina",
+        
+          title: "Lamina",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Lamina/";
+          
+        },
+      },{id: "post-async-flow",
         
           title: "Async Flow",
         
@@ -43,6 +54,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2026/AReal/";
+          
+        },
+      },{id: "post-hybrid",
+        
+          title: "Hybrid",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Hybrid/";
           
         },
       },{id: "post-阅读-distserve-论文",
@@ -76,6 +98,17 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2025/pa/";
+          
+        },
+      },{id: "post-阅读-paged-attention-论文",
+        
+          title: "阅读 Paged Attention 论文",
+        
+        description: "core of vllm",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/2025-review/";
           
         },
       },{id: "books-the-battle-of-algiers",
