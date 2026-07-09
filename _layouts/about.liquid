@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post layout-about">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -15,66 +15,149 @@ layout: default
   </header>
 
   <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
+    <div class="xxt-shell">
+      <main class="xxt-main">
+        <section class="xxt-window xxt-intro-window">
+          <div class="xxt-window-titlebar">主页</div>
+          <div class="xxt-window-content">
+            <div class="clearfix">{{ content }}</div>
+          </div>
+        </section>
+
+
+        <!-- News -->
+        {% if page.announcements and page.announcements.enabled %}
+          <section class="xxt-window">
+            <div class="xxt-window-titlebar">
+              <a href="{{ '/news/' | relative_url }}">新闻</a>
+            </div>
+            <div class="xxt-window-content">
+              {% include news.liquid limit=true %}
+            </div>
+          </section>
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
+
+        <!-- Latest posts -->
+        {% if page.latest_posts and page.latest_posts.enabled %}
+          <section class="xxt-window">
+            <div class="xxt-window-titlebar">
+              <a href="{{ '/blog/' | relative_url }}">最新文章</a>
+            </div>
+            <div class="xxt-window-content">
+              {% include latest_posts.liquid %}
+            </div>
+          </section>
         {% endif %}
-      </div>
-    {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+        <!-- Social -->
+        {% if page.social %}
+          <section class="xxt-window">
+            <div class="xxt-window-titlebar">关注</div>
+            <div class="xxt-window-content">
+              <div class="social">
+                <div class="contact-icons">{% include social.liquid %}</div>
+                <div class="contact-note">{{ site.contact_note }}</div>
+              </div>
+            </div>
+          </section>
+        {% endif %}
 
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+        <!-- Selected papers -->
+        {% if page.selected_papers %}
+          <section class="xxt-window">
+            <div class="xxt-window-titlebar">
+              <a href="{{ '/publications/' | relative_url }}">selected publications</a>
+            </div>
+            <div class="xxt-window-content">
+              {% include selected_papers.liquid %}
+            </div>
+          </section>
+        {% endif %}
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+        {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+          {% include newsletter.liquid center=true %}
+        {% endif %}
+      </main>
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
+      <aside class="xxt-sidebar">
+        {% if page.profile %}
+          <section class="xxt-window xxt-profile-window">
+            <div class="xxt-window-titlebar">个人信息</div>
+            <div class="xxt-window-content">
+              <div class="profile">
+                {% if page.profile.image %}
+                  {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+                  {% if page.profile.image_circular %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+                  {% else %}
+                    {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                  {% endif %}
+                  {% capture sizes %}(min-width: {{ site.max_width }}) 260px, 95vw{% endcapture %}
+                  {%
+                    include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                    cache_bust=true
+                  %}
+                {% endif %}
+                {% if page.profile.more_info %}
+                  <div class="more-info">{{ page.profile.more_info }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </section>
+        {% endif %}
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
+        {% assign blog_pages = site.pages | where: 'permalink', '/blog/' %}
+        {% assign publication_pages = site.pages | where: 'permalink', '/publications/' %}
+        {% assign project_pages = site.pages | where: 'permalink', '/projects/' %}
+        {% assign repository_pages = site.pages | where: 'permalink', '/repositories/' %}
+        {% assign cv_pages = site.pages | where: 'permalink', '/cv/' %}
+        {% assign cinema_pages = site.pages | where: 'permalink', '/cinema/' %}
+        {% assign function_page_count = blog_pages.size
+          | plus: publication_pages.size
+          | plus: project_pages.size
+          | plus: repository_pages.size
+          | plus: cv_pages.size
+          | plus: cinema_pages.size
+        %}
+        {% if site.search_enabled or site.enable_darkmode or function_page_count > 0 %}
+          <section class="xxt-window">
+            <div class="xxt-window-titlebar">功能</div>
+            <div class="xxt-window-content">
+            <ul class="xxt-function-list">
+              {% if site.search_enabled %}
+                <li>
+                  <a href="#" onclick="openSearchModal(); return false;"><i class="ti ti-search"></i> 搜索</a>
+                </li>
+              {% endif %}
+              {% if blog_pages.size > 0 %}
+                <li><a href="{{ '/blog/' | relative_url }}"><i class="ti ti-article"></i> 文章</a></li>
+              {% endif %}
+              {% if publication_pages.size > 0 %}
+                <li><a href="{{ '/publications/' | relative_url }}"><i class="ti ti-books"></i> 发表</a></li>
+              {% endif %}
+              {% if project_pages.size > 0 %}
+                <li><a href="{{ '/projects/' | relative_url }}"><i class="ti ti-folders"></i> 项目</a></li>
+              {% endif %}
+              {% if repository_pages.size > 0 %}
+                <li><a href="{{ '/repositories/' | relative_url }}"><i class="ti ti-brand-github"></i> 仓库</a></li>
+              {% endif %}
+              {% if cv_pages.size > 0 %}
+                <li><a href="{{ '/cv/' | relative_url }}"><i class="ti ti-id"></i> 简历</a></li>
+              {% endif %}
+              {% if cinema_pages.size > 0 %}
+                <li><a href="{{ '/cinema/' | relative_url }}"><i class="ti ti-movie"></i> 电影</a></li>
+              {% endif %}
+              {% if site.enable_darkmode %}
+                <li>
+                  <a href="#" onclick="document.getElementById('light-toggle')?.click(); return false;"><i class="ti ti-sun-moon"></i> 外观</a>
+                </li>
+              {% endif %}
+            </ul>
+            </div>
+          </section>
+        {% endif %}
+      </aside>
+    </div>
   </article>
 </div>
