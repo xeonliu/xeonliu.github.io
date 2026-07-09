@@ -73,8 +73,7 @@ body.fixed-top-nav .container[role="main"] {
   border-bottom: 1px solid #7f8ea6;
   box-shadow: none;
   opacity: 1;
-  background:
-    linear-gradient(to bottom, #fefefe 0%, #e5eaf5 30%, #d4dbed 31%, #e1e6f6 100%);
+  background: linear-gradient(to bottom, #fefefe 0%, #e5eaf5 30%, #d4dbed 31%, #e1e6f6 100%);
 }
 
 .navbar::before {
@@ -210,8 +209,7 @@ article,
 .post > article > .news,
 .repositories .repo,
 .projects .grid-item {
-  background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(202, 218, 239, 0.9));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(202, 218, 239, 0.9));
   border: 1px solid #f7f9fc;
   border-right-color: #2cd3fe;
   border-bottom-color: #2cd3fe;
@@ -355,8 +353,7 @@ html[data-theme="dark"] .post.layout-about > article > .social {
 .xxt-window {
   margin-bottom: 15px;
   overflow: hidden;
-  background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.82), rgba(213, 234, 246, 0.88) 48%, rgba(231, 242, 248, 0.86));
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.82), rgba(213, 234, 246, 0.88) 48%, rgba(231, 242, 248, 0.86));
   border: 1px solid #f7f9fc;
   border-right-color: #2cd3fe;
   border-bottom-color: #2cd3fe;

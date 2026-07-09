@@ -24,7 +24,6 @@ layout: default
           </div>
         </section>
 
-
         <!-- News -->
         {% if page.announcements and page.announcements.enabled %}
           <section class="xxt-window">
@@ -48,7 +47,6 @@ layout: default
             </div>
           </section>
         {% endif %}
-
 
         <!-- Social -->
         {% if page.social %}
@@ -124,36 +122,48 @@ layout: default
           <section class="xxt-window">
             <div class="xxt-window-titlebar">功能</div>
             <div class="xxt-window-content">
-            <ul class="xxt-function-list">
-              {% if site.search_enabled %}
-                <li>
-                  <a href="#" onclick="openSearchModal(); return false;"><i class="ti ti-search"></i> 搜索</a>
-                </li>
-              {% endif %}
-              {% if blog_pages.size > 0 %}
-                <li><a href="{{ '/blog/' | relative_url }}"><i class="ti ti-article"></i> 文章</a></li>
-              {% endif %}
-              {% if publication_pages.size > 0 %}
-                <li><a href="{{ '/publications/' | relative_url }}"><i class="ti ti-books"></i> 发表</a></li>
-              {% endif %}
-              {% if project_pages.size > 0 %}
-                <li><a href="{{ '/projects/' | relative_url }}"><i class="ti ti-folders"></i> 项目</a></li>
-              {% endif %}
-              {% if repository_pages.size > 0 %}
-                <li><a href="{{ '/repositories/' | relative_url }}"><i class="ti ti-brand-github"></i> 仓库</a></li>
-              {% endif %}
-              {% if cv_pages.size > 0 %}
-                <li><a href="{{ '/cv/' | relative_url }}"><i class="ti ti-id"></i> 简历</a></li>
-              {% endif %}
-              {% if cinema_pages.size > 0 %}
-                <li><a href="{{ '/cinema/' | relative_url }}"><i class="ti ti-movie"></i> 电影</a></li>
-              {% endif %}
-              {% if site.enable_darkmode %}
-                <li>
-                  <a href="#" onclick="document.getElementById('light-toggle')?.click(); return false;"><i class="ti ti-sun-moon"></i> 外观</a>
-                </li>
-              {% endif %}
-            </ul>
+              <ul class="xxt-function-list">
+                {% if site.search_enabled %}
+                  <li>
+                    <a href="#" onclick="openSearchModal(); return false;"><i class="ti ti-search"></i> 搜索</a>
+                  </li>
+                {% endif %}
+                {% if blog_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/blog/' | relative_url }}"><i class="ti ti-article"></i> 文章</a>
+                  </li>
+                {% endif %}
+                {% if publication_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/publications/' | relative_url }}"><i class="ti ti-books"></i> 发表</a>
+                  </li>
+                {% endif %}
+                {% if project_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/projects/' | relative_url }}"><i class="ti ti-folders"></i> 项目</a>
+                  </li>
+                {% endif %}
+                {% if repository_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/repositories/' | relative_url }}"><i class="ti ti-brand-github"></i> 仓库</a>
+                  </li>
+                {% endif %}
+                {% if cv_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/cv/' | relative_url }}"><i class="ti ti-id"></i> 简历</a>
+                  </li>
+                {% endif %}
+                {% if cinema_pages.size > 0 %}
+                  <li>
+                    <a href="{{ '/cinema/' | relative_url }}"><i class="ti ti-movie"></i> 电影</a>
+                  </li>
+                {% endif %}
+                {% if site.enable_darkmode %}
+                  <li>
+                    <a href="#" onclick="document.getElementById('light-toggle')?.click(); return false;"><i class="ti ti-sun-moon"></i> 外观</a>
+                  </li>
+                {% endif %}
+              </ul>
             </div>
           </section>
         {% endif %}
