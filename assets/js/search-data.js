@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cinema/";
           },
-        },{id: "post-lamina",
+        },{id: "post-on-sjtu",
+        
+          title: "On SJTU",
+        
+        description: "Things around SJTU",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/sjtu/";
+          
+        },
+      },{id: "post-lamina",
         
           title: "Lamina",
         
