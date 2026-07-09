@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-map",
+          title: "map",
+          description: "Travel notes by place.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/travel-map/";
+          },
         },{id: "nav-cinema",
           title: "cinema",
           description: "",
@@ -23,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cinema/";
           },
-        },{id: "post-on-sjtu",
+        },{id: "post-衢州游记",
+        
+          title: "衢州游记",
+        
+        description: "Trip to Qu Zhou",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/quzhou/";
+          
+        },
+      },{id: "post-on-sjtu",
         
           title: "On SJTU",
         
@@ -160,7 +178,12 @@ ninja.data = [{
             },},{id: "news-the-site-is-built-sparkles-smile",
           title: 'The site is built! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
+          section: "News",},{id: "news-nice-frutiger-aero-style",
+          title: 'Nice frutiger aero style',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
