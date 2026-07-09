@@ -25,13 +25,14 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 8 # leave blank to include all the blog posts
 ---
 
 An undergraduate student majoring in Software Engineering in <b>School of Computer Science, Shanghai Jiao Tong University</b>. Interested in <b>Cloud Native, AI Infra</b>.
 
-Also interested in Cinema 🎬, Photography 📸, Literature 📓. Member of [800 Film Club]().
+Currently working on <b>Agent OS</b>, specifically <b>Sandbox</b>.
 
+Also interested in Cinema 🎬, Photography 📸, Literature 📓. Member of [800 Film Club]().
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
